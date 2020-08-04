@@ -38,3 +38,14 @@
 | --- | :---: |  :---: | :---: | 
 | Pricing Matrix | H | 6hr | TBD |
 | Calculator API | H | 6hr | TBD |
+
+
+LEMP stack 
+
+Linux operating system, Nginx Web Server, MySql database, Dynamic Processing PHP
+
+Client Portal, 
+
+User Sign Up, Log in, Authentification. 
+
+Book dates on Calender, and trips. 
