@@ -7,6 +7,8 @@ function LandingPage() {
             <div className="app">
                 <FaBeer style={{ fontSize: '4rem' }} /><br />
                 <span style={{ fontSize: '2rem' }}>AirSea Client</span>
+                {/* Build Carousel of Images on timer*/}
+                {/* Stretch Goal, add card containers */}
             </div>
         </>
     )

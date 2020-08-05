@@ -5,6 +5,7 @@ import axios from 'axios';
 import { USER_SERVER } from '../../../Config';
 import { withRouter } from 'react-router-dom';
 import { useSelector } from "react-redux";
+const SubMenu = Menu.SubMenu;
 
 function RightMenu(props) {
   const user = useSelector(state => state.user)
@@ -22,12 +23,14 @@ function RightMenu(props) {
   if (user.userData && !user.userData.isAuth) {
     return (
       <Menu mode={props.mode}>
+        <SubMenu title={<span>Client Portal</span>}>
         <Menu.Item key="mail">
           <a href="/login">Sign-in</a>
         </Menu.Item>
         <Menu.Item key="app">
           <a href="/register">Sign-up</a>
         </Menu.Item>
+        </SubMenu>
       </Menu>
     )
   } else {
