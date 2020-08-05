@@ -7,15 +7,15 @@ function LeftMenu(props) {
   return (
     <Menu mode={props.mode}>
     <Menu.Item key="mail">
-      <a href="/">About</a>
+      <a href="/About">About</a>
     </Menu.Item>
     <SubMenu title={<span>Services For</span>}>
-        <Menu.Item key="setting:1">Architects and Interior Designers</Menu.Item>
-        <Menu.Item key="setting:2">Auction Houses, Luxury Brands, and 3PL</Menu.Item>
-        <Menu.Item key="setting:3">Art Galleries, Advisors, and Collectors</Menu.Item>
+        <Menu.Item key="setting:1"><a href="/Interiors"> Architects and Interior Designers </a></Menu.Item>
+        <Menu.Item key="setting:2"><a href="/Art"> Art Galleries, Advisors, and Collectors</a></Menu.Item>
+        <Menu.Item key="setting:3"><a href="/Luxury">Auction Houses, Luxury Brands, and 3PL</a></Menu.Item>
         <Menu.Item key="setting:4">Trusts, Estates, and Foundations</Menu.Item>
     </SubMenu>
-    <SubMenu title={<span>Schedule</span>}>
+    <SubMenu title={<span><a href="/Schedule">Schedule</a></span>}>
       <MenuItemGroup title="Domestic Schedule">
         <Menu.Item key="setting:5">US Trailers</Menu.Item>
         <Menu.Item key="setting:6">EU Trailers</Menu.Item>

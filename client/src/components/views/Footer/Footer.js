@@ -8,7 +8,7 @@ function Footer() {
             justifyContent: 'center', fontSize:'1rem'
         }}>
             <p> Copyright © 2020 AirSea Packing Group </p>
-            <p> Terms & Conditions </p>
+            <p> Terms &amp; Conditions </p>
         </div>
         
         

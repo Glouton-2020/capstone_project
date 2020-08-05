@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import "./about.css";
 
-export default class About extends Component {
-    render() {
+
+function About ( props ) {
         return (
         <section id="aboutMe" classNameName="container-about" tabindex="-1">
             <div className="overlay-about"></div>
@@ -10,7 +11,7 @@ export default class About extends Component {
             <h1>
                 About
                 <span className="span-one">
-                <span className="span-two">Bruno</span>
+                <span className="span-two">Benjamin </span>
                 </span>
             </h1>
             </div>
@@ -20,22 +21,20 @@ export default class About extends Component {
                 <h3>
                     I am a Web Developer
                     <br />
-                    Based in Dallas, Tx
+                    Based in New York, NY
                 </h3>
                 </div>
                 <div className="left-container-text">
                 <p>I am a Front-End Developer with Full-Stack exposure</p>
                 <p>
-                    An IT professional with 6 years of experience in different
-                    IT-related fields; from Application Support, to server
-                    configuration, and Data Analysis
+                    An IT professional 
                 </p>
                 </div>
             </div>
             <div className="right-content">
                 <img
-                src="https://res.cloudinary.com/duprwuo4j/image/upload/v1578605373/imgs_starwars/imgs/80195726_10156948905838597_8993168142045806592_n_bylsfs.jpg"
-                alt="This is my Family"
+                src=""
+                alt=""
                 />
             </div>
             </div>
@@ -47,9 +46,7 @@ export default class About extends Component {
                 </i> */}
                 </p>
                 <p className="text-holder">
-                I am particularly passionate about my family, well designed, clean
-                coded-front-to-back-web applications, to serve poor communities in
-                my spare time, and to drink coffee
+                I am particularly passionate about coffee
                 {/* <i>
                     <FontAwesomeIcon icon={faMugHot} />
                 </i> */}
@@ -59,8 +56,7 @@ export default class About extends Component {
             <div className="text-two">
                 <p className="text-holder">
                 A perfectly accomplished day for me is when I spend some time with
-                my son and wife, I learn something new, and when I debug/develop
-                something awesome, all of this accompanied with a nice warm cup of
+                a nice warm cup of
                 coffee <i className="fa fa-mug-hot"></i>
                 </p>
                 <p className="icon-holder">
@@ -76,11 +72,7 @@ export default class About extends Component {
                 </i> */}
                 </p>
                 <p className="text-holder">
-                My previous experiences as a full-time missionary and 6+ years in
-                IT application support, not only reflects my passions for
-                technology and care for people but taught me how to approach every
-                situation and individual as unique and how to develop a
-                well-organized strategy to problem solve.
+                My previous experiences as a full-time
                 </p>
             </div>
 
@@ -96,9 +88,7 @@ export default class About extends Component {
                     24-week, 500-hour full-stack Software Engeneering bootcamp at
                     General Assembly
                 </span>
-                . It was conducted in a remote setting, providing experience with
-                the latest front- and back-end programming languages, tools, and
-                methodologies.
+                . It was conducted in a remote setting, 
                 </p>
             </div>
             </div>
@@ -118,16 +108,15 @@ export default class About extends Component {
                 <div className="card-text">
                     <span className="demo">
                     <a
-                        href="https://dasilvabrunotexas.github.io/project_1/index.html"
+                        href=""
                         target="_blank"
                     >
                         DEMO
                     </a>
                     </span>
-                    <h2>Learn & Play</h2>
+                    <h2>Learn </h2>
                     <p>
-                    It is a platform where children at the age of 3-8 can learn
-                    while playing Drag&Drop Grames.
+                    It is a platform 
                     </p>
                 </div>
                 <div className="card-stats">
@@ -153,17 +142,16 @@ export default class About extends Component {
                 <div className="card-text">
                     <span className="demo">
                     <a
-                        href="https://star-wars-heroes-app.herokuapp.com/"
+                        href=""
                         target="_blank"
                     >
                         DEMO
                     </a>
                     </span>
-                    <h2>Star Wars Heroes</h2>
+                    <h2>Heroes</h2>
                     <p>
                     A full-stack web application. Users can view, edit
-                    informations of the most iconic Star Wars heroes. Also, they
-                    can create their own characters.
+                    informations of the most iconic
                     </p>
                 </div>
                 <div className="card-stats">
@@ -189,7 +177,7 @@ export default class About extends Component {
                 <div className="card-text">
                     <span className="demo">
                     <a
-                        href="https://youtube-api-learning-app.herokuapp.com/#/youtubeList"
+                        href=""
                         target="_blank"
                     >
                         DEMO
@@ -258,4 +246,5 @@ export default class About extends Component {
         </section>
         );
     }
-}
+
+    export default withRouter (About)

@@ -4,6 +4,10 @@ import Auth from "../hoc/auth";
 // pages for this product
 import LandingPage from "./views/LandingPage/LandingPage.js";
 import About from "./views/About/About.js";
+import Interiors from "./views/Interiors/Interiors.js";
+import Art from "./views/Art/Art.js";
+import Luxury from "./views/Luxury/Luxury.js";
+import Schedule from "./views/Schedule/Schedule.js";
 import LoginPage from "./views/LoginPage/LoginPage.js";
 import RegisterPage from "./views/RegisterPage/RegisterPage.js";
 import NavBar from "./views/NavBar/NavBar";
@@ -22,6 +26,10 @@ function App() {
         <Switch>
           <Route exact path="/" component={Auth(LandingPage, null)} />
           <Route exact path="/about" component={Auth(About, null)} />
+          <Route exact path="/art" component={Auth(Art, null)} />
+          <Route exact path="/luxury" component={Auth(Luxury, null)} />
+          <Route exact path="/interiors" component={Auth(Interiors, null)} />
+          <Route exact path="/schedule" component={Auth(Schedule, null)} />
           <Route exact path="/login" component={Auth(LoginPage, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
         </Switch>
