@@ -37,6 +37,7 @@ function LeftMenu(props) {
         <Menu.Item key="setting:17">Phoenix</Menu.Item>
         <Menu.Item key="setting:18">Washington, D.C.</Menu.Item>
     </SubMenu>
+    <SubMenu title={<span><a href="/Request">Request a Quote</a></span>}></SubMenu>
   </Menu>
   )
 }
