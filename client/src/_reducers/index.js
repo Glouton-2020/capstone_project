@@ -3,7 +3,7 @@ import user from './user_reducer';
 import schedule from './schedule_reducer';
 
 const rootReducer = combineReducers({
-    user,
+    user, schedule
 });
 
 export default rootReducer;

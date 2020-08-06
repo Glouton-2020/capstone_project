@@ -6,11 +6,12 @@ import EditSchedule from '../EditSchedule/EditSchedule';
 import './Calender.css';
 import moment from 'moment';
 
-function AllSchedules(props) {
+function Calender(props) {
 	const dispatch = useDispatch();
-console.log(localStorage)
+	console.log(localStorage)
 	let [schedules, setSchedules] = useState([]);
 	let [editing, setEditing] = useState(false);
+	let [searchTerm, setSearchTerm] = useState('');
 	let [newSchedule, setNewSchedule] = useState(false);
 
 	useEffect(() => {
@@ -21,11 +22,36 @@ console.log(localStorage)
 					setSchedules(response.payload);
 					localStorage.removeItem('newSchedule');
 				} else {
-					console.log('Could not get Schedule');
+					console.log('error getting Schedules');
+				}
+			});
+		} 
+		if (localStorage.deletedSchedule === 'true'){
+			dispatch(getSchedules()).then(response => {
+				if (response.payload) {
+					setSchedules(response.payload);
+					localStorage.removeItem('deletedSchedule');
+				} else {
+					console.log('error getting Schedules');
 				}
 			});
 		}
 	});
+
+	useEffect(() => {
+		if (searchTerm === '') {
+			dispatch(getSchedules()).then(response => {
+				if (response.payload) {
+					setSchedules(response.payload);
+				} else {
+					console.log('error getting Schedules');
+				}
+			});
+		} else if (searchTerm !== '') {
+			const results = schedules.filter(schedule => schedule.offering.toLowerCase().includes(searchTerm));
+			setSchedules(results);
+		}
+	}, [searchTerm, editing]);
 
 	const handleDelete = id => {
 		let dataToSubmit = {
@@ -37,12 +63,13 @@ console.log(localStorage)
 				dispatch(getSchedules()).then(response => {
 					if (response.payload) {
 						setSchedules(response.payload);
+						localStorage.setItem('deletedSchedule', true)
 					} else {
-						console.log('Could not get Schedule');
+						console.log('error getting Schedule');
 					}
 				});
 			} else {
-				console.log('Having a hard time deleting');
+				console.log('error deleting');
 			}
 		});
 	};
@@ -59,7 +86,12 @@ console.log(localStorage)
 	let date;
 
 	return (
-		<div className='all-schedule row'>
+		<div className='calender row'>
+			{editing === false ? (
+				<div className='search'>
+					<input type='text' onChange={handleSearch} placeholder='Search Schedule' className='search-bar' />
+				</div>
+			) : null}
 
 			{schedules.length > 0 &&
 				schedules
@@ -71,6 +103,20 @@ console.log(localStorage)
 						return (
 							<Fragment key={schedule._id}>
 								{editing === false ? (
+									<div className='crudbox'>
+										<div className='blog blog-border'>
+											<div className='name-location'>
+												<strong>{schedule.email}</strong>
+												<span className='schedule-time'>Scheduled {moment(date).fromNow(true)} ago</span>
+											</div>
+											<div className='clearfix margin-bottom-20'></div>
+											<p className='skills-p'>
+												<span className='info'>Date Expected:</span> {schedule.seeking}
+											</p>
+											<p className='skills-p'>
+												<span className='info'>Service Needed:</span> {schedule.offering}
+											</p>
+											<hr />
 											<div>
 												<ul className='ul'>
 													{localStorage.userId === schedule.user ? (
@@ -89,16 +135,6 @@ console.log(localStorage)
 																	<i className='fa fa-envelope' aria-hidden='true'></i>
 																</a>
 															</li>
-															<li>
-																<a href={`${schedule.github}`} className='social-icon' target="_blank" rel="noopener noreferrer">
-																	<i className='fa fa-github-square' aria-hidden='true'></i>
-																</a>
-															</li>
-															<li>
-																<a href={`${schedule.linkedin}`} className='social-icon' target="_blank" rel="noopener noreferrer">
-																	<i className='fa fa-linkedin-square' aria-hidden='true'></i>
-																</a>
-															</li>
 														</ul>
 													)}
 												</ul>
@@ -106,11 +142,13 @@ console.log(localStorage)
 										</div>
 									</div>
 								) : (
-									<EditPage
+									<EditSchedule
 										props={props}
 										schedule={schedule}
 										scheduleId={localStorage.theScheduleId}
 										toggleEdit={toggleEdit}
+										searchTerm={searchTerm}
+										setSearchTerm={setSearchTerm}
 									/>
 								)}
 							</Fragment>
@@ -120,7 +158,6 @@ console.log(localStorage)
 	);
 }
 
-export default withRouter(AllSchedules);
+export default withRouter(Calender);
 
 
-//  Calender page is broken after attempting page to host all Published. Will need to fix. 

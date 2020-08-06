@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { Fragment } from "react";
 import { withRouter } from "react-router-dom";
 
 function Interiors ( props ) {
     return ( 
+		<Fragment>
         <div className="app">
         <h1>Interiors Page</h1>
         <section>
@@ -92,6 +93,7 @@ function Interiors ( props ) {
 						
 					</section>
 					</div>
+			</Fragment>
     ) 
 
 }

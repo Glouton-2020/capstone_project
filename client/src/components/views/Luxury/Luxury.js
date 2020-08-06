@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React, { Fragment } from "react";
 import { withRouter } from "react-router-dom";
 import './Luxury.css';
 
 function Luxury ( props ) {
     return ( 
+		<Fragment>
         <div className="app">
         <h1>Luxury Page</h1>
         <section>
@@ -70,6 +71,7 @@ function Luxury ( props ) {
 					</section>
 					
         </div>
+	</Fragment>
     ) 
 
 }

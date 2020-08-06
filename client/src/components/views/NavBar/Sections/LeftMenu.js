@@ -13,16 +13,15 @@ function LeftMenu(props) {
         <Menu.Item key="setting:1"><a href="/Interiors"> Architects and Interior Designers </a></Menu.Item>
         <Menu.Item key="setting:2"><a href="/Art"> Art Galleries, Advisors, and Collectors</a></Menu.Item>
         <Menu.Item key="setting:3"><a href="/Luxury">Auction Houses, Luxury Brands, and 3PL</a></Menu.Item>
-        <Menu.Item key="setting:4">Trusts, Estates, and Foundations</Menu.Item>
     </SubMenu>
     <SubMenu title={<span><a href="/Schedule">Schedule</a></span>}>
       <MenuItemGroup title="Domestic Schedule">
-        <Menu.Item key="setting:5">US Trailers</Menu.Item>
-        <Menu.Item key="setting:6">EU Trailers</Menu.Item>
+        {/* <Menu.Item key="setting:5">US Trailers</Menu.Item>
+        <Menu.Item key="setting:6">EU Trailers</Menu.Item> */}
       </MenuItemGroup>
       <MenuItemGroup title="Sea Freight Schedule">
-        <Menu.Item key="setting:7">EU to US</Menu.Item>
-        <Menu.Item key="setting:8">US to EU</Menu.Item>
+        {/* <Menu.Item key="setting:7">EU to US</Menu.Item>
+        <Menu.Item key="setting:8">US to EU</Menu.Item> */}
       </MenuItemGroup>
     </SubMenu>
     <SubMenu title={<span>Locations</span>}>
@@ -38,6 +37,7 @@ function LeftMenu(props) {
         <Menu.Item key="setting:18">Washington, D.C.</Menu.Item>
     </SubMenu>
     <SubMenu title={<span><a href="/Request">Request a Quote</a></span>}></SubMenu>
+    <SubMenu title={<span><a href="/clientpage">Client Page</a></span>}></SubMenu>
   </Menu>
   )
 }

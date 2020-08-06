@@ -7,8 +7,8 @@ import { useDispatch } from 'react-redux';
 function EditPage(props) {
 	const dispatch = useDispatch();
 
-	const [updatedSeeking, setSeeking] = useState(props.post.seeking);
-	const [updatedOffering, setOffering] = useState(props.post.offering);
+	const [updatedSeeking, setSeeking] = useState(props.schedule.seeking);
+	const [updatedOffering, setOffering] = useState(props.schedule.offering);
 
 	const handleSubmit = e => {
 		e.preventDefault();
@@ -24,7 +24,7 @@ function EditPage(props) {
 			offering: updatedOffering,
 			author: localStorage.user,
 			user: localStorage.userId,
-			id: props.post._id,
+			id: props.schedule._id,
 		};
 
 		dispatch(updateSchedule(dataToSubmit)).then(response => {
@@ -45,19 +45,19 @@ function EditPage(props) {
 	if (props.schedule.user === localStorage.userId && props.scheduleId === props.schedule._id) {
 		return (
 			<div className='edit'>
-				<h3 className='edit-h3'>Edit your schedule</h3>
+				<h3 className='edit-h3'>Edit Your Schedule</h3>
 				<Form className='new-schedule-form' onSubmit={handleSubmit}>
 					<Form.Row>
 						<Form.Group controlId='seeking' onChange={handleChange}>
-							<Form.Label>I want to learn</Form.Label>
+						<Form.Control.Feedback type='invalid'>* Required</Form.Control.Feedback>
+							<Form.Label>Date Expected</Form.Label>
 							<Form.Control type='text' defaultValue={props.schedule.seeking} required />
-							<Form.Control.Feedback type='invalid'>Required field</Form.Control.Feedback>
 						</Form.Group>
 
 						<Form.Group controlId='offering' onChange={handleChange}>
-							<Form.Label>I can teach</Form.Label>
+						<Form.Control.Feedback type='invalid'>Required*</Form.Control.Feedback>
+							<Form.Label>Service Needed</Form.Label>
 							<Form.Control type='text' defaultValue={props.schedule.offering} required />
-							<Form.Control.Feedback type='invalid'>Required field</Form.Control.Feedback>
 						</Form.Group>
 					</Form.Row>
 

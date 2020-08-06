@@ -9,7 +9,7 @@ import {
 export default function(state={},action){
     switch(action.type){
         case GET_SCHEDULES:
-            return {...state, getScheduleSuccess: action.payload }
+            return {...state, getSchedulesSuccess: action.payload }
         case CREATE_SCHEDULE:
             return {...state, createSuccess: action.payload }
         case UPDATE_SCHEDULE:

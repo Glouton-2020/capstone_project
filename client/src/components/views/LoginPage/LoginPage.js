@@ -24,16 +24,16 @@ function LoginPage(props) {
   return (
     <Formik
       initialValues={{
-        email: initialEmail,
+        email: '',
         password: '',
       }}
       validationSchema={Yup.object().shape({
         email: Yup.string()
-          .email('Email is invalid')
-          .required('Email is required'),
+          .email('Invalid E-mail')
+          .required('Your E-mail is Required'),
         password: Yup.string()
           .min(6, 'Password must be at least 6 characters')
-          .required('Password is required'),
+          .required('Your Password is Required'),
       })}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
@@ -51,13 +51,13 @@ function LoginPage(props) {
                 } else {
                   localStorage.removeItem('rememberMe');
                 }
-                props.history.push("/");
+                props.history.push("/clientpage");
               } else {
-                setFormErrorMessage('Check out your Account or Password again')
+                setFormErrorMessage('Your E-mail or Password is Incorrect')
               }
             })
             .catch(err => {
-              setFormErrorMessage('Check out your Account or Password again')
+              setFormErrorMessage('Your E-mail or Password is Incorrect')
               setTimeout(() => {
                 setFormErrorMessage("")
               }, 3000);
@@ -77,16 +77,16 @@ function LoginPage(props) {
           handleSubmit,
         } = props;
         return (
-          <div className="app">
+          <div className="LoginPage">
 
-            <Title level={2}>Log In</Title>
+            <Title level={2}>Sign In</Title>
             <form onSubmit={handleSubmit} style={{ width: '350px' }}>
 
               <Form.Item required>
                 <Input
                   id="email"
                   prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                  placeholder="Enter your email"
+                  placeholder="Enter Your E-mail"
                   type="email"
                   value={values.email}
                   onChange={handleChange}
@@ -104,7 +104,7 @@ function LoginPage(props) {
                 <Input
                   id="password"
                   prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                  placeholder="Enter your password"
+                  placeholder="Enter Your Password"
                   type="password"
                   value={values.password}
                   onChange={handleChange}
@@ -123,16 +123,13 @@ function LoginPage(props) {
               )}
 
               <Form.Item>
-                <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe} >Remember me</Checkbox>
-                <a className="login-form-forgot" href="/reset_user" style={{ float: 'right' }}>
-                  forgot password
-                  </a>
+                <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe} >Remember Me</Checkbox>
                 <div>
                   <Button type="primary" htmlType="submit" className="login-form-button" style={{ minWidth: '100%' }} disabled={isSubmitting} onSubmit={handleSubmit}>
-                    Log in
+                    Sign In
                 </Button>
                 </div>
-                Or <a href="/register">register now!</a>
+                <a href="/register">Become a Member_____________</a>
               </Form.Item>
             </form>
           </div>

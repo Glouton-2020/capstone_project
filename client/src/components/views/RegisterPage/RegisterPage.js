@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import { registerUser } from "../../../_actions/user_actions";
 import { useDispatch } from "react-redux";
 
+// NEEDS to BE FIXED -CONFIRMED-
 import {
   Form,
   Input,
@@ -48,17 +49,17 @@ function RegisterPage(props) {
       }}
       validationSchema={Yup.object().shape({
         name: Yup.string()
-          .required('Name is required'),
+          .required('Name Is Required'),
         lastName: Yup.string()
-          .required('Last Name is required'),
+          .required('Last Name Is Required'),
         email: Yup.string()
-          .email('Email is invalid')
-          .required('Email is required'),
+          .email('Email Is Invalid')
+          .required('Email Is Required'),
         password: Yup.string()
-          .min(6, 'Password must be at least 6 characters')
-          .required('Password is required'),
+          .min(6, 'Password Must Be At Least 6 Characters')
+          .required('Password Is Required'),
         confirmPassword: Yup.string()
-          .oneOf([Yup.ref('password'), null], 'Passwords must match')
+          .oneOf([Yup.ref('Password'), null], 'Passwords Must Match')
           .required('Confirm Password is required')
       })}
       onSubmit={(values, { setSubmitting }) => {
@@ -96,14 +97,14 @@ function RegisterPage(props) {
           handleSubmit,
         } = props;
         return (
-          <div className="app">
-            <h2>Sign up</h2>
+          <div className="LoginPage">
+            <h2>Sign Up</h2>
             <Form style={{ minWidth: '375px' }} {...formItemLayout} onSubmit={handleSubmit} >
 
-              <Form.Item required label="Name">
+              <Form.Item required label="First Name">
                 <Input
                   id="name"
-                  placeholder="Enter your name"
+                  placeholder="Enter Your First Name"
                   type="text"
                   value={values.name}
                   onChange={handleChange}
@@ -120,7 +121,7 @@ function RegisterPage(props) {
               <Form.Item required label="Last Name">
                 <Input
                   id="lastName"
-                  placeholder="Enter your Last Name"
+                  placeholder="Enter Your Last Name"
                   type="text"
                   value={values.lastName}
                   onChange={handleChange}
@@ -134,10 +135,11 @@ function RegisterPage(props) {
                 )}
               </Form.Item>
 
-              <Form.Item required label="Email" hasFeedback validateStatus={errors.email && touched.email ? "error" : 'success'}>
+              <Form.Item required label="E-mail" 
+              hasFeedback validateStatus={errors.email && touched.email ? "error" : 'success'}>
                 <Input
                   id="email"
-                  placeholder="Enter your Email"
+                  placeholder="Enter Your E-mail"
                   type="email"
                   value={values.email}
                   onChange={handleChange}
@@ -154,7 +156,7 @@ function RegisterPage(props) {
               <Form.Item required label="Password" hasFeedback validateStatus={errors.password && touched.password ? "error" : 'success'}>
                 <Input
                   id="password"
-                  placeholder="Enter your password"
+                  placeholder="Enter Your Password"
                   type="password"
                   value={values.password}
                   onChange={handleChange}
@@ -171,7 +173,7 @@ function RegisterPage(props) {
               <Form.Item required label="Confirm" hasFeedback>
                 <Input
                   id="confirmPassword"
-                  placeholder="Enter your confirmPassword"
+                  placeholder="Confirm Your Password"
                   type="password"
                   value={values.confirmPassword}
                   onChange={handleChange}

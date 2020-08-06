@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { Fragment } from "react";
 import { withRouter } from "react-router-dom";
 
 function Art ( props ) {
     return ( 
+		<Fragment>
         <div className="app">
         <h1>Art Page</h1>
         <p><a href="https://aspfas.com/">Visit ASP Fine Art Services</a></p>
@@ -74,6 +75,7 @@ function Art ( props ) {
 						
 					</section>
         </div>
+	</Fragment>
     ) 
 
 }

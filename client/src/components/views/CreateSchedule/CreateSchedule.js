@@ -5,11 +5,10 @@ import { useDispatch } from 'react-redux';
 import { createSchedule } from '../../../_actions/schedule_actions';
 import { useSelector } from 'react-redux';
 
-
-function NewSchedule(props) {
+function CreateSchedule(props) {
 	const dispatch = useDispatch();
 	const user = useSelector(state => state.user);
-	console.log(user, 'is user on new schedule')
+	console.log(user, 'is user on create schedule')
 
 	const [seeking, setSeeking] = useState('');
 	const [offering, setOffering] = useState('');
@@ -28,17 +27,14 @@ function NewSchedule(props) {
 			offering: offering,
             author: user.userData.name,
 			user: user.userData._id,
-			email: user.userData.email,
-			github: user.userData.github,
-			linkedin: user.userData.linkedin,
-			avatar: user.userData.avatar
+			email: user.userData.email
 		};
 
-		dispatch(createPost(dataToSubmit)).then(response => {
+		dispatch(createSchedule(dataToSubmit)).then(response => {
 			if (response.payload) {
 				form.reset();
-				localStorage.setIteSchedule', true)
-				props.props.history.push('/home');
+				localStorage.setItem('newSchedule', true)
+				props.props.history.push('/clientpage');
 			} else {
 				console.log(response.payload);
 			}
@@ -53,38 +49,36 @@ function NewSchedule(props) {
 	return (
 		<div className='new-schedule'>
 		<div className="new-schedule-area">
-			<h3 className='create-h3'>Create a Schedule</h3>
-			<Form className='new-post-form' onSubmit={handleSubmit}>
+			<h3 className='create-h3'>Schedule What Service You Require</h3>
+			<div className="Explanation">
+				<h2>Welcome!</h2>
+				<p className='instructions'>Create a schedule detailing what services and when you require them.</p>
+				<p className='instructions'>Your schedule will appear below, our team will contact you shortly to confirm.</p>
+			</div>
+			<Form className='new-schedule-form' onSubmit={handleSubmit}>
 				<Form.Row>
 				
 					<Form.Group controlId='seeking' onChange={handleChange}>
-						<Form.Label>I want to learn</Form.Label>
-						<Form.Control type='text' placeholder='Desired skills' required />
-						<Form.Control.Feedback type='invalid'>Required field</Form.Control.Feedback>
+						<Form.Control.Feedback type='invalid'>* Required </Form.Control.Feedback>
+						<Form.Label>Service Required</Form.Label>
+						<Form.Control type='text' placeholder='Enter Required Service' required />
                     </Form.Group>
                     
                     <Form.Group controlId='offering' onChange={handleChange}>
-						<Form.Label>I can teach</Form.Label>
-						<Form.Control type='text' placeholder='Enter skills' required />
-						<Form.Control.Feedback type='invalid'>Required field</Form.Control.Feedback>
+					<Form.Control.Feedback type='invalid'>* Required</Form.Control.Feedback>
+						<Form.Label>Date For Services</Form.Label>
+						<Form.Control type='text' placeholder='Enter Date' required />
                     </Form.Group>
     
 				</Form.Row>
 
-				<Button variant='primary' type='submit' className='create-post-btn'>
+				<Button variant='primary' type='submit' className='create-schedule-btn'>
 					Submit
 				</Button>
 			</Form>
-			</div>
-			<div className="instructions">
-				<h6>How to?</h6>
-				<p className='instructions-p'>Create a post describing what skill(s) you want to learn</p>
-				<p className='instructions-p'>Include the skill(s) you can teach your connection in return</p>
-				<p className='instructions-p'>Scroll through your feed and see if anyone is offering the skill(s) you desire</p>
-				<p className='instructions-p'>If you find a match, connect with them and coordinate a schedule</p>
 			</div>
 		</div>
 	);
 }
 
-export default NewSchedule;
+export default CreateSchedule;

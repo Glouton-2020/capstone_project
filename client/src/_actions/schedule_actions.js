@@ -9,7 +9,7 @@ import {
 import { SCHEDULE_SERVER } from '../components/Config.js';
 
 // GET ALL SCHEDULES
-export function getSCHEDULES(){
+export function getSchedules(){
     const request = axios.get(`${SCHEDULE_SERVER}/getschedules`)
         .then(response => response.data);
     
@@ -21,7 +21,7 @@ export function getSCHEDULES(){
 
 // CREATE A NEW SCHEDULE
 export function createSchedule(dataToSubmit){
-    const request = axios.schedule(`${SCHEDULE_SERVER}/create`,dataToSubmit)
+    const request = axios.post(`${SCHEDULE_SERVER}/create`,dataToSubmit)
         .then(response => response.data);
     
     return {
