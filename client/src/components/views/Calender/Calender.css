@@ -1,0 +1,120 @@
+
+.calender{
+    background: rgb(7, 103, 160);
+    opacity: 72%;
+	width: 100%;
+    margin-top: 1em;
+    margin-right: 5em;
+	margin-bottom: 10em;
+	height: 68vh;
+    overflow: auto;
+    border-spacing: 0.5em;
+	display: flex;
+	flex-wrap: wrap;
+	border: 3px solid;
+}
+
+.search {
+	width: 100%;
+    display: flex;
+    align-content: center;
+	background-color: rgba(3, 20, 8, 0.5);
+	padding: 0.5em;
+	height: 50px;
+}
+
+.searchbar {
+	width: 60%;
+	padding-left: 1em;
+	border: 3px solid;
+    border-radius: 3em;
+    margin-left: 10em;
+	outline: none !important;
+}
+
+.account {
+    color: black;
+    font-size: 1.25em;
+    
+}
+.time-scheduled {
+    font-size: 0.95em;
+    color: yellowgreen;
+}
+
+.schedule-btns {
+	margin: 0 auto;
+	width: 85%;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.edit-btn,
+.delete-btn {
+	width: fit-content;
+	padding: 0.15em 1em;
+	margin-top: 0.65em;
+	font-size: 1em;
+	border: none!important;
+	outline: none!important;
+	color: white!important;
+}
+
+.btn{
+	outline: none!important;
+	font-size: inherit;
+}
+
+.edit-btn {
+	background-color: rgb(43, 162, 254)!important;
+}
+
+.delete-btn {
+	background-color: red !important;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+	opacity: .85!important;
+}
+
+.date {
+	color: yellow;
+	line-height: 1.5em;
+    letter-spacing: 1px;
+    font-size: 1.5em;
+}
+
+.service {
+	color: yellow;
+	line-height: 1.8em;
+    letter-spacing: 1px;
+    font-size: 1.3em;
+}
+
+.info {
+	text-transform: uppercase;
+    color: lightgrey;
+    font-size: 0.6em;
+}
+
+.email-location{
+    overflow: hidden;
+}
+
+.update-border {
+	border: 1px solid #f0f0f0;
+}
+
+.ul {
+	padding-left: 0;
+}
+
+.list-inline {
+	list-style: none;
+	display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 0;
+}
+
+

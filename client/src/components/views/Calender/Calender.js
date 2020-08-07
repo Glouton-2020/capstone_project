@@ -8,7 +8,7 @@ import moment from 'moment';
 
 function Calender(props) {
 	const dispatch = useDispatch();
-	console.log(localStorage)
+	// console.log(localStorage)
 	let [schedules, setSchedules] = useState([]);
 	let [editing, setEditing] = useState(false);
 	let [searchTerm, setSearchTerm] = useState('');
@@ -22,7 +22,7 @@ function Calender(props) {
 					setSchedules(response.payload);
 					localStorage.removeItem('newSchedule');
 				} else {
-					console.log('error getting Schedules');
+					console.log('Error Getting Schedules');
 				}
 			});
 		} 
@@ -32,7 +32,7 @@ function Calender(props) {
 					setSchedules(response.payload);
 					localStorage.removeItem('deletedSchedule');
 				} else {
-					console.log('error getting Schedules');
+					console.log('Error Getting Schedules');
 				}
 			});
 		}
@@ -44,11 +44,11 @@ function Calender(props) {
 				if (response.payload) {
 					setSchedules(response.payload);
 				} else {
-					console.log('error getting Schedules');
+					console.log('Error Getting Schedules');
 				}
 			});
 		} else if (searchTerm !== '') {
-			const results = schedules.filter(schedule => schedule.offering.toLowerCase().includes(searchTerm));
+			const results = schedules.filter(schedule => schedule.service.toLowerCase().includes(searchTerm));
 			setSchedules(results);
 		}
 	}, [searchTerm, editing]);
@@ -86,35 +86,34 @@ function Calender(props) {
 	let date;
 
 	return (
-		<div className='calender row'>
+		<div className='calender'>
 			{editing === false ? (
 				<div className='search'>
-					<input type='text' onChange={handleSearch} placeholder='Search Schedule' className='search-bar' />
-				</div>
+				<input type='text' onChange={handleSearch} placeholder='Search Schedule' className='searchbar' />
+			</div>
 			) : null}
-
 			{schedules.length > 0 &&
 				schedules
-					.slice(0)
-					.reverse()
+					.slice(0) .reverse()
 					.map(schedule => {
 						console.log(schedule)
 						date = new Date(schedule.date);
 						return (
 							<Fragment key={schedule._id}>
 								{editing === false ? (
-									<div className='crudbox'>
-										<div className='blog blog-border'>
-											<div className='name-location'>
-												<strong>{schedule.email}</strong>
-												<span className='schedule-time'>Scheduled {moment(date).fromNow(true)} ago</span>
+									<div className='col-xs-12 col-sm-8 col-md-6 col-lg-4'>
+										<div className='update-border'>
+											<div className='email-location'>
+												<strong className='account'>{schedule.email}</strong>
+												<br/>
+												<span className='time-scheduled'>Scheduled {moment(date).fromNow(true)} ago</span>
 											</div>
 											<div className='clearfix margin-bottom-20'></div>
-											<p className='skills-p'>
-												<span className='info'>Date Expected:</span> {schedule.seeking}
+											<p className='date'>
+												<span className='info'>Date Expected:</span> {schedule.expected}
 											</p>
-											<p className='skills-p'>
-												<span className='info'>Service Needed:</span> {schedule.offering}
+											<p className='service'>
+												<span className='info'>Service Needed:</span> {schedule.service}
 											</p>
 											<hr />
 											<div>
@@ -129,12 +128,7 @@ function Calender(props) {
 															</button>
 														</div>
 													) : (
-														<ul className='list-inline social-list'>
-															<li>
-																<a href={`mailto:${schedule.email}`} className='social-icon'>
-																	<i className='fa fa-envelope' aria-hidden='true'></i>
-																</a>
-															</li>
+														<ul className='list-inline'>
 														</ul>
 													)}
 												</ul>
