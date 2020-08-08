@@ -36,7 +36,7 @@ function Calender(props) {
 				}
 			});
 		}
-	});
+	}, []);
 
 	useEffect(() => {
 		if (searchTerm === '') {

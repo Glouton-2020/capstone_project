@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import './ClientPage.css';
 
 function ClientPage(props) {
-	console.log(localStorage, 'IS STORAGE ON ClientPAGE');
+	// console.log(localStorage, 'IS STORAGE ON ClientPAGE');
 
 	return (
 		<Fragment>
