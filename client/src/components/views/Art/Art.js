@@ -5,8 +5,8 @@ function Art ( props ) {
     return ( 
 		<Fragment>
         <div className="app">
-        <h1>Art Page</h1>
-        <p><a href="https://aspfas.com/">Visit ASP Fine Art Services</a></p>
+        		<h1 className="h1R">ASP Fine Art Services</h1>
+        
 <p>Modern storage facilities with state-of-the-art security systems. Providing short unique inventory coding and digital tracking for short and long-term storage.</p>
                     <section>
                     <article>
@@ -23,20 +23,19 @@ function Art ( props ) {
 															</div>
 						</article>						
 						
-					</section>
+						</section>
 								<section id="transport">		
 						
 						<figure>
 							<div className="block">
-								<img src="https://airseapacking.com/wp-content/uploads/2019/01/20160302_ASPFAS_handling-020.jpg" alt="art handler shipping" />
+								<img src="" alt="" />
 															</div>
 												</figure>
 							
 						<article>
-							<h3>Transport, Import and Export Shipping</h3>
-							<div className="app">
-								<p>Planning and execution of packing, transport, and installation. Utilization of AirSea owned and operated fleet for timely and cost-effective shipping options, local and domestic. Professional, skilled crews for white-glove delivery and installation of your product(s) to reflect the highest integrity of your business.</p>
-							</div>
+								<h2>Transport, Import and Export Shipping</h2>
+								<p>Planning and execution of packing, transport, and installation. </p>
+								<p>Utilization of AirSea owned and operated fleet for timely and cost-effective shipping options, local and domestic.</p>
 							<div className="bullets">
 																	<ul>
 																					<li>Inside delivery with unpacking, placement of product and removal of packing debris.</li>
@@ -51,17 +50,13 @@ function Art ( props ) {
 								<section id="installation">		
 						
 						<figure>
-							<div className="expand">
-								<img src="https://airseapacking.com/wp-content/uploads/2019/01/ASPFAS_handling-and-install_014.jpg" alt="art handling and installation" />
-															</div>
-												</figure>
+								<img src="" alt="" />
+															
+						</figure>
 							
 						<article>
-
-							<div class="app">
-                            <h3>Installation</h3>
+                            <h2>Installation</h2>
 								<p>Placement and set up of fine art objects is an ASP FAS specialty. A trained team can plan and execute an entire project with effective time-saving solutions.</p>
-							</div>
 							<div className="bullets">
 																	<ul>
 																					<li>Site assessment and pre-planning for organized and efficient execution.</li>

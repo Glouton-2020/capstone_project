@@ -6,7 +6,7 @@ function Request ( props ) {
     return ( 
         <Fragment>
         <div className="app">
-        <h1>Request a Quote</h1>
+        <h1 className="h1R">Request a Quote</h1>
         <MyForm/>
         {/* Look into implementing a Wizard form https://redux-form.com/8.2.2/examples/wizard/ */}
         </div>

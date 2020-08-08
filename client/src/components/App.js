@@ -15,9 +15,9 @@ import ClientPage from './views/ClientPage/ClientPage';
 import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer"
 
-//null   Anyone Can go inside
-//true   only logged in user can go inside
-//false  logged in user can't go inside
+//null   Global Access
+//true   Private Access
+//false  Users Can't Access
 
 function App() {
   return (

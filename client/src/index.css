@@ -19,6 +19,11 @@ body {
   background-color: #fff;
 }
 
+.h1R {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
 .app {
   flex-direction: column;
   display: flex;
@@ -45,4 +50,22 @@ input.error {
   margin-top: -12px;
 }
 
+.form-master {
+  width: 100%;
+}
+
+.simple {
+  text-align: center;
+}
+
+.red {
+  color: red;
+}
+
+@media only screen and (max-width: 900px) {
+  .form-master {
+      width: 75%;
+      height: 100%;
+  }
+}
 

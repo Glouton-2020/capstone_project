@@ -21,7 +21,7 @@ const handleChange = e => {
 
     return (
             <div className="app">
-                <h1 className="title">AirSea Packing </h1>
+                <h1 className="title">AirSea</h1>
                     <Carousel className="carousel" onChange={handleChange}>
                         {state.items.map(item => (
                             <div key={item.id}>

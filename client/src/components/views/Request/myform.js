@@ -1,5 +1,6 @@
 import React from "react";
 
+
 export default class MyForm extends React.Component {
     constructor(props) {
         super(props);
@@ -12,7 +13,7 @@ export default class MyForm extends React.Component {
     render() {
         const { status } = this.state;
         return (
-        <form
+        <form className="form-master"
             onSubmit={this.submitForm}
             action="https://formspree.io/xyynolko"
             method="POST"
@@ -70,13 +71,13 @@ export default class MyForm extends React.Component {
 						</div>
 					</div>
                     <div className="row text-md-right text-sm-center">
-						<div className="col-12 col-sm-12 col-md-6 mx-auto">
+						<div className="col-12 col-sm-12 col-md-6 mx-auto simple">
                         {status === "SUCCESS" ? <p>Your Request has been Recieved!</p> : <button
 								type="submit"
-								className="btn btn-primary mb-2 hidden">
+								className="btn btn-success mb-2 hidden gsubmit">
 								Submit
 							</button>}
-                            {status === "ERROR" && <p>Please Try Again, There was an error.</p>}
+                            {status === "ERROR" && <p className="red">Please Try Again, There was an error.</p>}
 						</div>
 					</div>
         </form>

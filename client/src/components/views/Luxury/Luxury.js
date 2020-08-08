@@ -6,7 +6,7 @@ function Luxury ( props ) {
     return ( 
 		<Fragment>
         <div className="app">
-        <h1>Luxury Page</h1>
+        <h1 className="h1R">Auction Houses, Luxury Brands, and 3PL</h1>
         <section>
         <article>
         <p>Planning and finalizing of interior changeovers, new store setup, pop-up, visual décor, including prop placement and window display.</p>
@@ -29,7 +29,7 @@ function Luxury ( props ) {
 						</figure>
 							
 						<article>
-							<h3>Storage and Warehousing</h3>
+							<h2>Storage and Warehousing</h2>
 							<div class="content">
 								<p>We provide the most needed service for managing merchandising, props and accessories for multiple sites.</p>
 							</div>
@@ -43,17 +43,11 @@ function Luxury ( props ) {
 															</div>
 						</article>						
 						
-					</section>
+						</section>
 								<section id="3rd">		
-						
-						<figure>
-							<div className="block">
 								<img src="" alt="" />
-													</div>
-						</figure>
-							
 						<article>
-							<h3>3rd Party Logistics </h3>
+							<h2>3rd Party Logistics </h2>
 							<div className="content">
 								<p>AirSea customizes a streamlined process for timely distribution of fine furnishings, accessories, lighting, and artworks through our strategic locations. We manage your logistic operations offering the highest standards of handling, packing and transport to meet the integrity and reputation of your brand.</p>
 							</div>
@@ -66,8 +60,7 @@ function Luxury ( props ) {
                                                                                     </li>
 																			</ul>
 															</div>
-						</article>						
-						
+							</article>	
 					</section>
 					
         </div>
