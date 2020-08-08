@@ -15,8 +15,18 @@ Visit my app at : [www.airsea10.herokuapp.com](https://airsea10.herokuapp.com/)
 - Create a replica of the AirSea Packing website using React. 
 - Develop a starting point for a Client Portal. 
 
-# Wire-Frame 
+# Technologies Used
+MERN
 
+- MongoDB Atlas 
+- Node JS
+- Express JS
+- React 
+- Redux
+- Formspree
+- bootstrap 
+- formik (Easy way to keep everything in the form components.)
+- Yup (Help define the schema for validation)
 
 # TimeLine 
 
