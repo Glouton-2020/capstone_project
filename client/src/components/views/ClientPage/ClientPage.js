@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import NewSchedule from '../CreateSchedule/CreateSchedule';
 import Calender from '../Calender/Calender';
-import Footer from '../Footer/Footer';
 import { withRouter } from 'react-router-dom';
 import './ClientPage.css';
 
@@ -19,7 +18,6 @@ function ClientPage(props) {
 					<Calender />
 				</div>
 			</div>
-			<Footer />
 		</Fragment>
 	);
 }

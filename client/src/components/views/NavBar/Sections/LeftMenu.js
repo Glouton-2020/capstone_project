@@ -38,6 +38,7 @@ function LeftMenu(props) {
     </SubMenu>
     <SubMenu title={<span><a href="/Request">Request a Quote</a></span>}></SubMenu>
     <SubMenu title={<span><a href="/clientpage">Client Page</a></span>}></SubMenu>
+    <SubMenu title={<span><a href="https://www.bminglouton.com/">Portfolio</a></span>}></SubMenu>
   </Menu>
   )
 }

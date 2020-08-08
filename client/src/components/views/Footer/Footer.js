@@ -5,9 +5,11 @@ function Footer() {
         <div style={{
             height: '80px', display: 'flex', 
             flexDirection: 'row', alignItems: 'center',
-            justifyContent: 'center', fontSize:'1rem'
+            justifyContent: 'center', fontSize:'1rem',
+            // position: 'absolute', bottom: '-20em' 
         }}>
             <p> Copyright © 2020 AirSea Packing Group </p>
+            <br/>
             <p> Terms &amp; Conditions </p>
         </div>
         

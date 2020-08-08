@@ -45,7 +45,6 @@ function RegisterPage(props) {
         lastName: '',
         name: '',
         password: '',
-        confirmPassword: ''
       }}
       validationSchema={Yup.object().shape({
         name: Yup.string()
@@ -58,9 +57,6 @@ function RegisterPage(props) {
         password: Yup.string()
           .min(6, 'Password Must Be At Least 6 Characters')
           .required('Password Is Required'),
-        confirmPassword: Yup.string()
-          .oneOf([Yup.ref('Password'), null], 'Passwords Must Match')
-          .required('Confirm Password is required')
       })}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
@@ -167,23 +163,6 @@ function RegisterPage(props) {
                 />
                 {errors.password && touched.password && (
                   <div className="input-feedback">{errors.password}</div>
-                )}
-              </Form.Item>
-
-              <Form.Item required label="Confirm" hasFeedback>
-                <Input
-                  id="confirmPassword"
-                  placeholder="Confirm Your Password"
-                  type="password"
-                  value={values.confirmPassword}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={
-                    errors.confirmPassword && touched.confirmPassword ? 'text-input error' : 'text-input'
-                  }
-                />
-                {errors.confirmPassword && touched.confirmPassword && (
-                  <div className="input-feedback">{errors.confirmPassword}</div>
                 )}
               </Form.Item>
 

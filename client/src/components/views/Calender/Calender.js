@@ -101,7 +101,7 @@ function Calender(props) {
 						return (
 							<Fragment key={schedule._id}>
 								{editing === false ? (
-									<div className='col-xs-12 col-sm-8 col-md-6 col-lg-4'>
+									<div className='col-xs-12 col-sm-8 col-md-6 col-lg-4 contentful'>
 										<div className='update-border'>
 											<div className='email-location'>
 												<strong className='account'>{schedule.email}</strong>
@@ -110,10 +110,10 @@ function Calender(props) {
 											</div>
 											<div className='clearfix margin-bottom-20'></div>
 											<p className='date'>
-												<span className='info'>Date Expected:</span> {schedule.expected}
+												<span className='info'>Date Requested:</span> {schedule.expected}
 											</p>
 											<p className='service'>
-												<span className='info'>Service Needed:</span> {schedule.service}
+												<span className='info'>Service Requested:</span> {schedule.service}
 											</p>
 											<hr />
 											<div>

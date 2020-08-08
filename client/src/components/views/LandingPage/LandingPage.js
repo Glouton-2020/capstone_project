@@ -1,19 +1,36 @@
 import React from 'react'
-// import Carousel from "react-elastic-carousel";
+import Carousel from "react-elastic-carousel";
+import './LandingPage.css';
 
-function LandingPage() {
+
+
+function LandingPage(props) {
+    const state = {
+        items: [
+            {id: 1, source: 'https://media.giphy.com/media/J1n1BFf715ORq/giphy.gif'},
+            {id: 2, source: 'https://media.giphy.com/media/nOBv4FaG7o1Hy/giphy.gif'},
+            {id: 3, source: 'https://media.giphy.com/media/J1n1BFf715ORq/giphy.gif'},
+        ]
+    };
+
+const handleChange = e => {
+    
+}
+
     return (
-        <>
             <div className="app">
                 <span style={{ fontSize: '2rem' }}>AirSea Client</span>
-                {/* Build Carousel of Images on timer*/}
+                    <Carousel className="carousel" onChange={handleChange}>
+                        {state.items.map(item => (
+                            <div key={item.id}>
+                                <img className='carousel-image' src={item.source} alt=''/>
+                            </div>
+                        ))}
+                    </Carousel>
+
                 {/* Stretch Goal, add card containers */}
-                <div class="row col-lg-3">
-                <img className="img-fluid" src="https://media.giphy.com/media/nOBv4FaG7o1Hy/giphy.gif" alt="Stock Image"/>
-                <h1>Keep Going!!!</h1>
-                </div>
             </div>
-        </>
+
     )
 }
 

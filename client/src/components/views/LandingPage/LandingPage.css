@@ -1,0 +1,20 @@
+.carousel {
+    height: 100vh !important;
+    width: 100vh !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.rec-carousel {
+    height: 100% !important;
+    width: 100% !important;
+}
+.rec-pagination {
+    margin-bottom: 20em;
+}
+
+
+.carousel-image {
+    height: 600px;
+    width: 800px
+}
