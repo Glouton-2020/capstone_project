@@ -13,8 +13,12 @@
     margin-bottom: 20em;
 }
 
+.title {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
 
 .carousel-image {
     height: 600px;
-    width: 800px
+    width: 900px
 }

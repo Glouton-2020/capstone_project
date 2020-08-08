@@ -54,22 +54,22 @@ function CreateSchedule(props) {
 			<h3 className='header'>Welcome </h3>
 			<h3 className='header'>How May We Assist You?</h3>
 			<div className="explanation">
-				<p >Select the date you require our services</p>
-				<p >Your schedule will appear below, our team will contact you shortly to confirm.</p>
+				<p >Select the date and tell us what services you need.</p>
+				<p> Our team will be in contact with you shortly.</p>
 			</div>
 			<Form className='new-schedule-form' onSubmit={handleSubmit}>
 				<Form.Row>
 				
 					<Form.Group controlId='expected' onChange={handleChange}>
-						<Form.Label className='dater'>Date Requested</Form.Label>
+						<Form.Label className='dater'>Date Requested:</Form.Label>
 						<Form.Control type='date' placeholder='Enter Date' required />
                     </Form.Group>
 
 
                     
                     <Form.Group controlId='service' onChange={handleChange}>
-						<Form.Label>Service Requested</Form.Label>
-						<Form.Control type='text' placeholder='Enter Required Service' required />
+						<Form.Label>Service Requested:</Form.Label>
+						<Form.Control type='text' placeholder='Enter Service' required />
                     </Form.Group>
     
 				</Form.Row>

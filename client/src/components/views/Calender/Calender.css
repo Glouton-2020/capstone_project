@@ -1,7 +1,6 @@
 
 .calender{
     background: rgb(7, 103, 160);
-    opacity: 72%;
 	width: 100%;
     margin-top: 1em;
     margin-right: 5em;
@@ -33,11 +32,13 @@
 }
 
 .account {
-    color: black;
+	margin-left: 2em;
+    color: white;
     font-size: 1.25em;
     
 }
 .time-scheduled {
+	margin-left: 2.5em;
     font-size: 0.95em;
     color: yellowgreen;
 }
@@ -80,14 +81,17 @@
 
 .edit-btn:hover,
 .delete-btn:hover {
-	opacity: .85!important;
+	width: fit-content;
+	padding: 0.15em 1em;
+	margin-top: 0.65em;
+	font-size: 1em;
 }
 
 .date {
 	color: yellow;
 	line-height: 1.5em;
     letter-spacing: 1px;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 .service {
@@ -109,6 +113,9 @@
 
 .update-border {
 	border: 1px solid #f0f0f0;
+	padding-top: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
 }
 
 .ul {

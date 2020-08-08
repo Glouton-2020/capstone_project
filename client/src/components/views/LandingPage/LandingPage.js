@@ -7,9 +7,11 @@ import './LandingPage.css';
 function LandingPage(props) {
     const state = {
         items: [
-            {id: 1, source: 'https://media.giphy.com/media/J1n1BFf715ORq/giphy.gif'},
-            {id: 2, source: 'https://media.giphy.com/media/nOBv4FaG7o1Hy/giphy.gif'},
-            {id: 3, source: 'https://media.giphy.com/media/J1n1BFf715ORq/giphy.gif'},
+            {id: 1, source: 'https://media.giphy.com/media/OkJat1YNdoD3W/giphy.gif'},
+            {id: 2, source: 'https://media.giphy.com/media/rCQTCy4rvuxR6/giphy.gif'},
+            {id: 3, source: 'https://media.giphy.com/media/dvsgFTicRYOdy/giphy.gif'},
+            
+            
         ]
     };
 
@@ -19,7 +21,7 @@ const handleChange = e => {
 
     return (
             <div className="app">
-                <span style={{ fontSize: '2rem' }}>AirSea Client</span>
+                <h1 className="title">AirSea Packing </h1>
                     <Carousel className="carousel" onChange={handleChange}>
                         {state.items.map(item => (
                             <div key={item.id}>

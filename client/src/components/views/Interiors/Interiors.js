@@ -5,11 +5,11 @@ function Interiors ( props ) {
     return ( 
 		<Fragment>
         <div className="app">
-        <h1>Interiors Page</h1>
-        <section>
-        <article>
-        <p>Our most needed service for projects requiring time to build before installation with secure facilities located in 10 major cities to accommodate small to large items.</p>
-							<div className="bullets">
+        			<h1>Services for Architects and Interior Designers </h1>
+        							<section>
+        								<article>
+        									<p>Our most needed service for projects requiring time to build before installation with secure facilities located in 10 major cities to accommodate small to large items.</p>
+													<div className="bullets">
 																	<ul>
 																					<li>Receiving purchases and inspection of items with personalized coding for each project’s items with the ability to apply sidemarks and room allocations.</li>
 																					<li>Processing item(s) upon arrival with photography, inventory description and tagging with unique identification codes.</li>
