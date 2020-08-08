@@ -44,7 +44,7 @@ function Luxury ( props ) {
 						</article>						
 						
 						</section>
-								<section id="3rd">		
+						<section id="3rd">		
 								<img src="" alt="" />
 						<article>
 							<h2>3rd Party Logistics </h2>
