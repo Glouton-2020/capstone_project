@@ -2,9 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Schedule  = require("../models/Schedule");
 
-//=================================
-//         Schedules
-//=================================
 
 router.get('/getschedules', (req,res)=>{
     Schedule.find({}, function(err, schedules) {

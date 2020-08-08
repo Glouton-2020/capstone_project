@@ -8,7 +8,7 @@ import moment from 'moment';
 
 function Calender(props) {
 	const dispatch = useDispatch();
-	// console.log(localStorage)
+	console.log(localStorage)
 	let [schedules, setSchedules] = useState([]);
 	let [editing, setEditing] = useState(false);
 	let [searchTerm, setSearchTerm] = useState('');
@@ -36,7 +36,7 @@ function Calender(props) {
 				}
 			});
 		}
-	}, []);
+	});
 
 	useEffect(() => {
 		if (searchTerm === '') {
@@ -65,11 +65,11 @@ function Calender(props) {
 						setSchedules(response.payload);
 						localStorage.setItem('deletedSchedule', true)
 					} else {
-						console.log('error getting Schedule');
+						console.log('Error Getting Schedule');
 					}
 				});
 			} else {
-				console.log('error deleting');
+				console.log('Error Deleting');
 			}
 		});
 	};
@@ -91,7 +91,7 @@ function Calender(props) {
 				<div className='search'>
 				<input type='text' onChange={handleSearch} placeholder='Search Schedule' className='searchbar' />
 			</div>
-			) : null}
+					) : null}
 			{schedules.length > 0 &&
 				schedules
 					.slice(0) .reverse()
